@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API_HH", "API_HH\API_HH.csproj", "{3B7F84A0-84BB-416C-9F9B-A3063BEFBB5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HHLibrary", "HHLibrary\HHLibrary.csproj", "{DDE3D27F-9980-4609-A917-D8CB1608B679}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3B7F84A0-84BB-416C-9F9B-A3063BEFBB5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B7F84A0-84BB-416C-9F9B-A3063BEFBB5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B7F84A0-84BB-416C-9F9B-A3063BEFBB5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B7F84A0-84BB-416C-9F9B-A3063BEFBB5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDE3D27F-9980-4609-A917-D8CB1608B679}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDE3D27F-9980-4609-A917-D8CB1608B679}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDE3D27F-9980-4609-A917-D8CB1608B679}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDE3D27F-9980-4609-A917-D8CB1608B679}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {81540B75-427E-4C32-A0F5-6F4CB9064BF8}
+	EndGlobalSection
+EndGlobal
