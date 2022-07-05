@@ -13,6 +13,8 @@ namespace API_HH
 {
     public partial class Form1 : Form
     {
+        HHModel model = new HHModel();
+
         public Form1()
         {
             InitializeComponent();
@@ -20,10 +22,15 @@ namespace API_HH
 
         private void btnTest_Click(object sender, EventArgs e)
         {
-            HHModel model = new HHModel();
+            
             tbResult.Text =  model.RequestGet("https://api.hh.ru/vacancies/67344660");
 
             //https://github.com/hhru/api
+        }
+
+        private void btnPars_Click(object sender, EventArgs e)
+        {
+            tbResult.Text = model.JsonParseString(model.RequestGet("https://api.hh.ru/vacancies/67344660"));
         }
     }
 }

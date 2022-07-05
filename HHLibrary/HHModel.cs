@@ -5,6 +5,8 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace HHLibrary
 {
@@ -37,6 +39,17 @@ namespace HHLibrary
             {
                 outstring = e.Message;
             }
+
+            return outstring;
+        }
+
+
+        public string JsonParseString(string json)
+        {
+            string outstring = "";
+            dynamic jsonObj = JObject.Parse(json);
+            outstring += jsonObj.name + "\n"; // name is key in json file
+            outstring += " Salary from: " + jsonObj.salary.from + " to " + jsonObj.salary.to;
 
             return outstring;
         }
