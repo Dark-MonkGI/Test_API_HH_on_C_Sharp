@@ -31,6 +31,7 @@
             this.tbResult = new System.Windows.Forms.TextBox();
             this.btnTest = new System.Windows.Forms.Button();
             this.btnPars = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tbResult
@@ -55,7 +56,7 @@
             // btnPars
             // 
             this.btnPars.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnPars.Location = new System.Drawing.Point(416, 325);
+            this.btnPars.Location = new System.Drawing.Point(229, 325);
             this.btnPars.Name = "btnPars";
             this.btnPars.Size = new System.Drawing.Size(132, 52);
             this.btnPars.TabIndex = 2;
@@ -63,11 +64,23 @@
             this.btnPars.UseVisualStyleBackColor = true;
             this.btnPars.Click += new System.EventHandler(this.btnPars_Click);
             // 
+            // btnSearch
+            // 
+            this.btnSearch.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnSearch.Location = new System.Drawing.Point(416, 325);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(132, 52);
+            this.btnSearch.TabIndex = 3;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnPars);
             this.Controls.Add(this.btnTest);
             this.Controls.Add(this.tbResult);
@@ -83,6 +96,7 @@
         private System.Windows.Forms.TextBox tbResult;
         private System.Windows.Forms.Button btnTest;
         private System.Windows.Forms.Button btnPars;
+        private System.Windows.Forms.Button btnSearch;
     }
 }
 

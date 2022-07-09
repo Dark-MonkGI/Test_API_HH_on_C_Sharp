@@ -23,16 +23,21 @@ namespace HHLibrary
             try
             {
                 WebClient client = new WebClient();
-                client.Headers.Add("user-agent", "Mozilla / 4.0(compatible; MSIE 7.0; Windows NT 6.1; WOW64; Trident / 6.0;)");
-                Stream stream = client.OpenRead(request);
+                client.Headers.Add("user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36");
+                
+                
+                using(Stream stream = client.OpenRead(request))
+                {
+                    using (StreamReader streamReader = new StreamReader(stream))
+                    {
+                        string line;
 
-                StreamReader streamReader = new StreamReader(stream);
-                string line;
+                        while ((line = streamReader.ReadLine()) != null)
+                            outstring += line;
+                    }
+                }
 
-                while((line = streamReader.ReadLine()) != null)
-                    outstring += line;
-                stream.Close();
-
+                //stream.Close();
                 //streamReader.Close();
             }
             catch (Exception e)
@@ -48,8 +53,26 @@ namespace HHLibrary
         {
             string outstring = "";
             dynamic jsonObj = JObject.Parse(json);
-            outstring += jsonObj.name + "\n"; // name is key in json file
+            outstring += jsonObj.name + "\r\n"; // name is key in json file
             outstring += " Salary from: " + jsonObj.salary.from + " to " + jsonObj.salary.to;
+
+            return outstring;
+        }
+
+        public string JsonParseStringItems(string json)
+        {
+            string outstring = "";
+            dynamic jsonObj = JObject.Parse(json);
+
+            foreach(dynamic item in jsonObj.items)
+            {
+                outstring += item.name + "\r\n";
+                if (item.salary != null)
+                    outstring += " Salary from: " + item.salary.from + " to " + item.salary.to + "\r\n";
+                outstring += "============================" + "\r\n";
+            }
+
+
 
             return outstring;
         }

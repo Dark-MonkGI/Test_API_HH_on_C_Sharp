@@ -32,5 +32,10 @@ namespace API_HH
         {
             tbResult.Text = model.JsonParseString(model.RequestGet("https://api.hh.ru/vacancies/67344660"));
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            tbResult.Text = model.JsonParseStringItems(model.RequestGet("https://api.hh.ru/vacancies?text=developer"));
+        }
     }
 }
