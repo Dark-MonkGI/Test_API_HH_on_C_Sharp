@@ -38,6 +38,7 @@
             this.Column_Employer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_info = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblCount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gvSearchingResults)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,11 +113,20 @@
             this.Column_info.HeaderText = "info";
             this.Column_info.Name = "Column_info";
             // 
+            // lblCount
+            // 
+            this.lblCount.AutoSize = true;
+            this.lblCount.Location = new System.Drawing.Point(12, 334);
+            this.lblCount.Name = "lblCount";
+            this.lblCount.Size = new System.Drawing.Size(0, 13);
+            this.lblCount.TabIndex = 5;
+            // 
             // fSearching
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(743, 365);
+            this.Controls.Add(this.lblCount);
             this.Controls.Add(this.btnOverview);
             this.Controls.Add(this.tbSearch);
             this.Controls.Add(this.gvSearchingResults);
@@ -140,5 +150,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_Employer;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_Address;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_info;
+        private System.Windows.Forms.Label lblCount;
     }
 }

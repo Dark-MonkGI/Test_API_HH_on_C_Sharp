@@ -78,22 +78,17 @@ namespace HHLibrary
         }
 
 
-        public string JsonParserResoutSearching(string json)
+        public List<Vacancy> JsonParserResoutSearching(string json)
         {
-            string outstring = "";
+            List<Vacancy> listVacancies = new List<Vacancy>();
+
             dynamic jsonObj = JObject.Parse(json);
 
             foreach (dynamic item in jsonObj.items)
             {
-                outstring += item.name + "\r\n";
-                if (item.salary != null)
-                    outstring += " Salary from: " + item.salary.from + " to " + item.salary.to + "\r\n";
-                outstring += "============================" + "\r\n";
+                listVacancies.Add(new Vacancy(item));
             }
-
-
-
-            return outstring;
+            return listVacancies;
         }
     }
 }

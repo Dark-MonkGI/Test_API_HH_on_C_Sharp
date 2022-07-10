@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace HHLibrary
 {
-    internal struct Vacancy
+    public struct Vacancy
     {
-        string id;
-        string name;
-        string salary_from;
-        string salary_to;
-        string employer_name;
-        string address;
-        string info;
+        public string id { get; private set; }
+        public string name { get; private set; }
+        public string salary_from { get; private set; }
+        public string salary_to { get; private set; }
+        public string employer_name { get; private set; }
+        public string address { get; private set; }
+        public string info { get; private set; }
 
         public Vacancy(dynamic jsonObj)
         {
@@ -23,26 +23,26 @@ namespace HHLibrary
 
             if (jsonObj.salary != null)
             {
-                this.salary_from = (jsonObj.salary.from == null)? "No data" : jsonObj.salary_from;
-                this.salary_to = (jsonObj.salary.to == null)? "No data" : jsonObj.salary_to;
+                this.salary_from = (jsonObj.salary.from == null)? " - " : jsonObj.salary.from;
+                this.salary_to = (jsonObj.salary.to == null)? " - " : jsonObj.salary.to;
             }
             else
             {
-                this.salary_from = "No data";
-                this.salary_to = "No data";
+                this.salary_from = " - ";
+                this.salary_to = " - ";
             }
-            this.employer_name = jsonObj.employer_name;
+            this.employer_name = jsonObj.employer.name;
 
             if (jsonObj.address != null)
                 this.address = jsonObj.address.city + " " + jsonObj.address.street + " " + jsonObj.address.building;
             else
-                this.address = "No data";
+                this.address = " - ";
 
             if (jsonObj.address != null)
                 this.info = jsonObj.description;
             else
-                this.info = "No data";
-            
+                this.info = " - ";
+
         }
 
     }
