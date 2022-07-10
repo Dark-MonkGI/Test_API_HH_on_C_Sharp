@@ -11,11 +11,12 @@ using HHLibrary;
 
 namespace API_HH
 {
-    public partial class Form1 : Form
+    public partial class fMain : Form
     {
+        fSearching fSearching = new fSearching();
         HHModel model = new HHModel();
 
-        public Form1()
+        public fMain()
         {
             InitializeComponent();
         }
@@ -36,6 +37,11 @@ namespace API_HH
         private void btnSearch_Click(object sender, EventArgs e)
         {
             tbResult.Text = model.JsonParseStringItems(model.RequestGet("https://api.hh.ru/vacancies?text=developer"));
+        }
+
+        private void btnOpenForms_Click(object sender, EventArgs e)
+        {
+            fSearching.ShowDialog();
         }
     }
 }

@@ -76,5 +76,24 @@ namespace HHLibrary
 
             return outstring;
         }
+
+
+        public string JsonParserResoutSearching(string json)
+        {
+            string outstring = "";
+            dynamic jsonObj = JObject.Parse(json);
+
+            foreach (dynamic item in jsonObj.items)
+            {
+                outstring += item.name + "\r\n";
+                if (item.salary != null)
+                    outstring += " Salary from: " + item.salary.from + " to " + item.salary.to + "\r\n";
+                outstring += "============================" + "\r\n";
+            }
+
+
+
+            return outstring;
+        }
     }
 }

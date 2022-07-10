@@ -1,6 +1,6 @@
 ﻿namespace API_HH
 {
-    partial class Form1
+    partial class fMain
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -32,11 +32,12 @@
             this.btnTest = new System.Windows.Forms.Button();
             this.btnPars = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.btnOpenForms = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tbResult
             // 
-            this.tbResult.Location = new System.Drawing.Point(41, 41);
+            this.tbResult.Location = new System.Drawing.Point(41, 12);
             this.tbResult.Multiline = true;
             this.tbResult.Name = "tbResult";
             this.tbResult.Size = new System.Drawing.Size(507, 258);
@@ -75,16 +76,28 @@
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // Form1
+            // btnOpenForms
+            // 
+            this.btnOpenForms.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnOpenForms.Location = new System.Drawing.Point(647, 12);
+            this.btnOpenForms.Name = "btnOpenForms";
+            this.btnOpenForms.Size = new System.Drawing.Size(141, 52);
+            this.btnOpenForms.TabIndex = 4;
+            this.btnOpenForms.Text = "Open Forms";
+            this.btnOpenForms.UseVisualStyleBackColor = true;
+            this.btnOpenForms.Click += new System.EventHandler(this.btnOpenForms_Click);
+            // 
+            // MainForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnOpenForms);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnPars);
             this.Controls.Add(this.btnTest);
             this.Controls.Add(this.tbResult);
-            this.Name = "Form1";
+            this.Name = "MainForms";
             this.Text = "HH API";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -97,6 +110,7 @@
         private System.Windows.Forms.Button btnTest;
         private System.Windows.Forms.Button btnPars;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnOpenForms;
     }
 }
 
