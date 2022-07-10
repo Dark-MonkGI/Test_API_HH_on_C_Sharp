@@ -38,8 +38,8 @@ namespace HHLibrary
             else
                 this.address = " - ";
 
-            if (jsonObj.address != null)
-                this.info = jsonObj.description;
+            if (jsonObj.alternate_url != null)
+                this.info = jsonObj.alternate_url;
             else
                 this.info = " - ";
 
