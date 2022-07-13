@@ -11,12 +11,12 @@
             <ColumnDefinition Width="219*"/>
             <ColumnDefinition Width="181*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="162,352,0,0" VerticalAlignment="Top" Height="40" Width="161" Grid.Column="1" FontSize="16" FontWeight="Bold" Click="btnSearch_Click">
+        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="380,352,0,0" VerticalAlignment="Top" Height="40" Width="161" FontSize="16" FontWeight="Bold" Click="btnSearch_Click" Grid.ColumnSpan="2">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <TextBox x:Name="tbSearch" HorizontalAlignment="Left" Margin="26,358,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="457" Grid.ColumnSpan="2" Height="28">
+        <TextBox x:Name="tbSearch" HorizontalAlignment="Left" Margin="26,352,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="281" Height="40">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
@@ -26,6 +26,11 @@
                 <DropShadowEffect/>
             </ListBox.Effect>
         </ListBox>
+        <Button x:Name="btnBrowser" Content="Browser" HorizontalAlignment="Left" Margin="163,352,0,0" VerticalAlignment="Top" Height="40" Width="161" Click="btnBrowser_Click" Grid.Column="1" FontWeight="Bold" FontSize="16">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
 
     </Grid>
 </Window>

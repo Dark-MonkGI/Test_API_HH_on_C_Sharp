@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using HHLibrary;
+using System.Windows.Controls;
 
 namespace BotWPF
 {
@@ -42,7 +44,11 @@ namespace BotWPF
 
             foreach (Vacancy vacancy in listVacancies)
             {
-                lbResult.Items.Add(vacancy.id + " " + vacancy.name);
+                ListBoxItem item = new ListBoxItem();
+                item.Content = vacancy.id + " " + vacancy.name;
+                item.Tag = vacancy.info;
+
+                lbResult.Items.Add(item);
 
                 //DataGridViewRow row = (DataGridViewRow)gvSearchingResults.Rows[0].Clone();
 
@@ -56,6 +62,21 @@ namespace BotWPF
 
                 //gvSearchingResults.Rows.Add(row);
             }
+
+        }
+
+        private void btnBrowser_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                ListBoxItem item = (ListBoxItem)lbResult.SelectedItem;
+                Process.Start(item.Tag.ToString());
+            }
+            catch (NullReferenceException ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+
 
         }
     }
