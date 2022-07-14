@@ -72,12 +72,10 @@ namespace BotWPF
                 ListBoxItem item = (ListBoxItem)lbResult.SelectedItem;
                 Process.Start(item.Tag.ToString());
             }
-            catch (NullReferenceException ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
-
-
         }
     }
 }
