@@ -10,25 +10,27 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
+using HHLibrary;
 
 namespace HHProf
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для WinTest.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class WinTest : Window
     {
-        public MainWindow()
+        HHModel model = new HHModel();
+
+        public WinTest()
         {
             InitializeComponent();
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        private void btnTest_Click(object sender, RoutedEventArgs e)
         {
-            WinTest winTest = new WinTest();
-            winTest.ShowDialog();
+            tbRes.Text =  model.RequestGet("https://api.hh.ru/vacancies?text=" + tbSearch.Text);
+
         }
     }
 }
